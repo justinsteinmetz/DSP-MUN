@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSP MUN — Model United Nations Student Guide</title>
+<meta name="description" content="DSP English Hub · Model United Nations · Three-unit student guide from UN history to full committee simulation.">
+<meta name="theme-color" content="#07090f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<canvas id="canvas-bg" aria-hidden="true"></canvas>
+
+<nav aria-label="Main navigation">
+  <div class="nav-brand">
+    <a href="#" aria-label="DSP English Hub home" style="display:flex;align-items:center;">
+      <img src="dsp-logo.png" alt="DSP logo" style="height:18px;width:auto;display:block;filter:brightness(0) invert(1);opacity:0.85;transition:opacity 0.2s;">
+    </a>
+    <span style="color:var(--text-3);margin:0 0.4rem;">·</span>
+    <span style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--u1);font-weight:500;">MUN</span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#unit1">Unit 1</a></li>
+    <li><a href="#unit2">Unit 2</a></li>
+    <li><a href="#unit3">Unit 3</a></li>
+    <li><a href="#glossary">Glossary</a></li>
+    <li><a href="#rubrics">Rubrics</a></li>
+    <li><a href="#procedure">Procedure</a></li>
+    <li><a href="#resbuilder">Resolution</a></li>
+    <li><a href="#countryProfile">Country Profile</a></li>
+    <li><a href="#downloads">Downloads</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
+  <div class="nav-progress" id="navProgress" aria-hidden="true"></div>
+</nav>
+
+<div class="unit-switcher" role="navigation" aria-label="Jump to unit">
+  <button class="unit-btn active" data-u="1" onclick="jumpUnit(1)" aria-label="Unit 1: History and Structure">
+    <span class="un" aria-hidden="true">Unit 1</span><span class="ut">History &amp; Structure</span><span class="ug">7 lessons · 3 weeks</span>
+  </button>
+  <button class="unit-btn" data-u="2" onclick="jumpUnit(2)" aria-label="Unit 2: Research and Policy">
+    <span class="un" aria-hidden="true">Unit 2</span><span class="ut">Research &amp; Policy</span><span class="ug">14 lessons · 6 weeks</span>
+  </button>
+  <button class="unit-btn" data-u="3" onclick="jumpUnit(3)" aria-label="Unit 3: Simulated Committee">
+    <span class="un" aria-hidden="true">Unit 3</span><span class="ut">Simulated Committee</span><span class="ug">17 lessons · 7 weeks</span>
+  </button>
+</div>
+
+<main id="main-content">
+
+<!-- ══ HERO ══ -->
+<section class="hero" aria-label="Introduction">
+  <div class="container">
+    <div class="hero-eyebrow"><a href="#" aria-label="DSP English Hub home">DSP English Hub</a> · MUN Programme</div>
+    <div class="hero-heading">
+      <img src="un-logo.png" alt="" class="hero-un-logo" aria-hidden="true">
+      <h1>Model <em>United Nations</em> — Student Guide</h1>
+    </div>
+    <p class="hero-sub">Three units. Thirty-eight lessons. From the history of the UN to running your own committee session — everything you need in one place.</p>
+    <div class="hero-cta">
+      <a href="#unit1" class="btn btn-primary">Start with Unit 1 →</a>
+      <a href="#procedure" class="btn btn-ghost">Procedure quick-ref</a>
+      <a href="#resbuilder" class="btn btn-ghost">Resolution builder</a>
+      <a href="#rubrics" class="btn btn-ghost">Assessment rubrics</a>
+    </div>
+    <div class="hero-principle" role="complementary" aria-label="Core question">
+      <div class="hero-principle-label">The core question</div>
+      <div class="hero-principle-text">When individual countries pursue national interests, how does the world pursue common ideals?</div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ══ ABOUT SECTION ══ -->
+<section id="about" aria-label="About DSP MUN">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label" style="color:var(--u1)">About the Programme</div>
+      <h2 class="sec-title">What is DSP MUN?</h2>
+    </div>
+    <div class="about-grid reveal">
+      <div>
+        <p class="about-quote">"When individual countries pursue national interests, how does the world pursue common ideals?"</p>
+        <p style="font-size:0.88rem;color:var(--text-2);line-height:1.75;margin-bottom:1.25rem;">
+          DSP MUN is a three-unit Model United Nations programme run through DSP English Hub for students in grades 10–12. Over 38 lessons and approximately 16 weeks, students move from the historical origins of the United Nations to conducting their own fully simulated committee session — in English.
+        </p>
+        <p style="font-size:0.88rem;color:var(--text-2);line-height:1.75;margin-bottom:1.25rem;">
+          The programme integrates academic English skills — research, persuasive writing, formal speaking, and critical reading — with deep engagement in global issues, international law, and diplomatic procedure. Students graduate the programme able to write a structured position paper, deliver a formal speech, draft resolution clauses, and participate in a live committee session.
+        </p>
+        <p style="font-size:0.88rem;color:var(--text-2);line-height:1.75;">
+          This guide is the student's single reference point for the entire programme — lessons, vocabulary, rubrics, procedure, and tools — in one place.
+        </p>
+        <div class="about-stat-row">
+          <div class="about-stat"><div class="about-stat-num">38</div><div class="about-stat-label">Lessons</div></div>
+          <div class="about-stat"><div class="about-stat-num">3</div><div class="about-stat-label">Units</div></div>
+          <div class="about-stat"><div class="about-stat-num">16</div><div class="about-stat-label">Weeks</div></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-3);margin-bottom:0.85rem;">Programme goals</div>
+        <div class="about-goals">
+          <div class="about-goal"><div class="about-goal-icon">🌐</div><div class="about-goal-text"><strong>Global literacy.</strong> Understand how the United Nations works, why it was created, and where it falls short — with historical and critical depth.</div></div>
+          <div class="about-goal"><div class="about-goal-icon">🔍</div><div class="about-goal-text"><strong>Research skills.</strong> Evaluate sources, find and cite official documents, and synthesise information into a structured academic position paper.</div></div>
+          <div class="about-goal"><div class="about-goal-icon">🗣️</div><div class="about-goal-text"><strong>Formal English communication.</strong> Write and speak in a diplomatic register — clearly, persuasively, and with precision in English.</div></div>
+          <div class="about-goal"><div class="about-goal-icon">🤝</div><div class="about-goal-text"><strong>Negotiation and perspective-taking.</strong> Represent a country's policy accurately, even when you disagree with it, and negotiate across genuine differences.</div></div>
+          <div class="about-goal"><div class="about-goal-icon">⚖️</div><div class="about-goal-text"><strong>Critical thinking.</strong> Engage with the UN's contradictions and limitations — not just its ideals. Understand the gap between what institutions promise and what they deliver.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:2rem">
+      <div class="sec-label" style="color:var(--text-3)">Your progress</div>
+      <div class="progress-controls">
+        <div class="progress-summary" id="progressSummary">Loading…</div>
+        <button class="progress-btn export" onclick="exportProgress()">↓ Export progress</button>
+        <button class="progress-btn export" onclick="importProgressClick()">↑ Import progress</button>
+        <button class="progress-btn danger" onclick="openResetModal()">✕ Reset all progress</button>
+        <input type="file" id="importFileInput" accept=".json" style="display:none" onchange="importProgress(event)">
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="rule">
+
+<!-- ══ UNIT 1 ══ -->
+<section id="unit1" style="background:rgba(90,142,200,0.03)" aria-label="Unit 1: History, Goals and Structure">
+  <div class="container">
+    <div class="reveal">
+      <div class="unit-header" style="--ac:var(--u1);--acd:var(--u1d)">
+        <div class="unit-header-top">
+          <span class="unit-number">Unit 01 of 03</span>
+          <span class="unit-pace">7 lessons · 3 weeks</span>
+        </div>
+        <div class="unit-title">History, Goals &amp; Structure</div>
+        <div class="unit-eq">Essential question: <em>How can individual countries pursue common ideals?</em></div>
+        <div class="unit-enduring">The United Nations emerged not from idealism but from catastrophe. Understanding why it was built requires understanding what it was built to prevent — and why those who designed it thought previous attempts had failed.</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="sec-label" style="color:var(--u1)">Lesson Map</div>
+      <h2 class="sec-title">What you'll learn</h2>
+      <p class="sec-intro">Seven lessons building the foundation for everything that follows. Click any lesson to expand.</p>
+    </div>
+    <div class="lesson-map reveal" id="lm1" role="list" aria-label="Unit 1 lessons"></div>
+    <div class="reveal" style="margin-top:3rem">
+      <div class="sec-label" style="color:var(--u1)">Historical context</div>
+      <h2 class="sec-title">From war to charter</h2>
+      <p class="sec-intro">The UN did not appear fully formed. It emerged from a series of failures — and deliberate attempts to do better.</p>
+    </div>
+    <div class="timeline reveal" id="timeline" role="list" aria-label="UN historical timeline"></div>
+    <div class="reveal" style="margin-top:3.5rem">
+      <div class="sec-label" style="color:var(--u1)">The six organs</div>
+      <h2 class="sec-title">How the UN is structured</h2>
+      <p class="sec-intro">The UN has six main organs. Each has a distinct function. Knowing which body does what is essential before you step into a simulation.</p>
+    </div>
+    <div class="organs-grid reveal" id="organsGrid"></div>
+    <div class="reveal" style="margin-top:3.5rem">
+      <div class="sec-label" style="color:var(--u1)">Core principles</div>
+      <h2 class="sec-title">What the Charter commits to</h2>
+      <p class="sec-intro">The UN Charter establishes seven core principles that guide all member states. These are binding commitments — though their application is contested.</p>
+    </div>
+    <div class="organs-grid reveal" id="principlesGrid"></div>
+
+    <!-- CRITICAL LENS -->
+    <div class="reveal" style="margin-top:3.5rem">
+      <div class="critical-lens" role="complementary" aria-label="Critical perspectives on the UN">
+        <div class="critical-lens-header">
+          <span class="critical-lens-icon" aria-hidden="true">⚖</span>
+          <div>
+            <div class="critical-lens-label">Critical lens</div>
+            <div class="critical-lens-title">The UN through a sharper eye</div>
+          </div>
+        </div>
+        <p style="font-size:0.85rem;color:var(--text-2);margin-bottom:1.5rem;line-height:1.7;">Understanding the UN's structure is not the same as accepting it uncritically. Strong MUN delegates — and strong analytical thinkers — engage with the institution's contradictions and limitations.</p>
+        <div class="critical-cards">
+          <div class="critical-card">
+            <div class="critical-card-tag">Power structure</div>
+            <div class="critical-card-title">The Veto Problem</div>
+            <div class="critical-card-body">The five permanent members of the Security Council — China, France, Russia, UK, USA — each hold an absolute veto over binding resolutions. This reflects the power balance of 1945, not 2025. The P5 structure has paralysed the Council on Syria, Ukraine, Gaza, and dozens of other crises where a permanent member has interests at stake.</div>
+            <div class="critical-card-q">Critical question: If any P5 member can block any resolution, can the Security Council ever act against the interests of the powerful?</div>
+          </div>
+          <div class="critical-card">
+            <div class="critical-card-tag">Historical legacy</div>
+            <div class="critical-card-title">Colonial Legacies</div>
+            <div class="critical-card-body">The UN was founded primarily by Western powers at the height of colonial empire. Many current member states — and the problems they face — are direct consequences of colonialism. The principles of sovereignty and self-determination were applied selectively: rapidly for some, not at all for others. Much of the Global South views the UN system as encoding, rather than correcting, colonial-era power structures.</div>
+            <div class="critical-card-q">Critical question: Can an institution designed by colonial powers genuinely represent a post-colonial world?</div>
+          </div>
+          <div class="critical-card">
+            <div class="critical-card-tag">Institutional design</div>
+            <div class="critical-card-title">Implementation Gap</div>
+            <div class="critical-card-body">The UN can pass resolutions but has no independent enforcement mechanism. It relies on member states to implement what they have agreed to — and states frequently do not. The General Assembly's resolutions are non-binding. The Human Rights Council has been dominated at times by states with poor human rights records. UN peacekeeping has been implicated in serious abuses in multiple conflicts.</div>
+            <div class="critical-card-q">Critical question: Is a body that cannot enforce its own decisions genuinely effective, or does it provide cover for inaction?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ══ UNIT 2 ══ -->
+<section id="unit2" aria-label="Unit 2: Research to Policy">
+  <div class="container">
+    <div class="reveal">
+      <div class="unit-header" style="--ac:var(--u2);--acd:var(--u2d)">
+        <div class="unit-header-top">
+          <span class="unit-number">Unit 02 of 03</span>
+          <span class="unit-pace">14 lessons · 6 weeks</span>
+        </div>
+        <div class="unit-title" style="color:var(--u2)">Research to Policy</div>
+        <div class="unit-eq">Essential question: <em>What is each country's role in addressing global challenges?</em></div>
+        <div class="unit-enduring">Every nation plays a part when the world confronts significant challenges, but the nature and extent of involvement vary dramatically. These differences emerge from a complex intertwining of historical experience, economic capability, political system, cultural values, geographic realities, and national interests. Understanding why a nation chooses a particular path requires recognising these influences.</div>
+      </div>
+    </div>
+
+    <!-- Research Pipeline Diagram -->
+    <div class="reveal">
+      <div class="sec-label" style="color:var(--u2)">Research Pipeline</div>
+      <h2 class="sec-title">From issue to position paper</h2>
+      <p class="sec-intro">Every position paper follows the same intellectual journey. Five stages, each building on the last. Don't skip ahead.</p>
+    </div>
+    <div class="pipeline reveal" role="list" aria-label="Research pipeline stages">
+      <div class="pipeline-step" role="listitem">
+        <div class="pipeline-num">Stage 1</div>
+        <div class="pipeline-label">Issue</div>
+        <div class="pipeline-desc">Define the global problem. What is it, who does it affect, and why does it matter now?</div>
+      </div>
+      <div class="pipeline-step" role="listitem">
+        <div class="pipeline-num">Stage 2</div>
+        <div class="pipeline-label">UN Action</div>
+        <div class="pipeline-desc">What has the UN and international community already done? What resolutions, treaties, or programmes exist?</div>
+      </div>
+      <div class="pipeline-step" role="listitem">
+        <div class="pipeline-num">Stage 3</div>
+        <div class="pipeline-label">Country Policy</div>
+        <div class="pipeline-desc">What is your assigned country's official position? Find voting records, speeches, and government statements.</div>
+      </div>
+      <div class="pipeline-step" role="listitem">
+        <div class="pipeline-num">Stage 4</div>
+        <div class="pipeline-label">Solutions</div>
+        <div class="pipeline-desc">What specific, actionable proposals are consistent with your country's policy and the committee's mandate?</div>
+      </div>
+      <div class="pipeline-step" role="listitem">
+        <div class="pipeline-num">Stage 5</div>
+        <div class="pipeline-label">Position Paper</div>
+        <div class="pipeline-desc">Synthesise all four stages into a structured four-section document ready for committee.</div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="sec-label" style="color:var(--u2)">Lesson Map</div>
+      <h2 class="sec-title">What you'll learn</h2>
+      <p class="sec-intro">Fourteen lessons from research fundamentals to elevator pitch. Click any lesson to expand.</p>
+    </div>
+    <div class="lesson-map reveal" id="lm2" role="list" aria-label="Unit 2 lessons"></div>
+
+    <!-- Committees -->
+    <div class="reveal" style="margin-top:3rem">
+      <div class="sec-label" style="color:var(--u2)">Committees</div>
+      <h2 class="sec-title">Where you'll serve</h2>
+      <p class="sec-intro">As a delegate, you are assigned to a specific committee. Know what your committee covers — it determines your topic and the powers of your resolutions.</p>
+    </div>
+    <div class="committee-grid reveal" id="committeeGrid"></div>
+
+    <!-- Position Paper Builder -->
+    <div class="reveal" style="margin-top:3.5rem">
+      <div class="sec-label" style="color:var(--u2)">Position Paper Builder</div>
+      <h2 class="sec-title">Build your position paper</h2>
+      <p class="sec-intro">A position paper has four sections. Each section has a specific job. Work through them in order.</p>
+    </div>
+    <div class="paper-builder reveal" id="paperBuilder">
+      <div class="paper-nav" id="paperNav" role="tablist" aria-label="Paper sections"></div>
+      <div id="paperSections"></div>
+    </div>
+
+    <!-- Critical lens: Unit 2 -->
+    <div class="reveal" style="margin-top:3.5rem">
+      <div class="critical-lens">
+        <div class="critical-lens-header">
+          <span class="critical-lens-icon" aria-hidden="true">⚖</span>
+          <div>
+            <div class="critical-lens-label">Critical lens · Research</div>
+            <div class="critical-lens-title">Who gets to define the problem?</div>
+          </div>
+        </div>
+        <div class="critical-cards">
+          <div class="critical-card">
+            <div class="critical-card-tag">Source bias</div>
+            <div class="critical-card-title">Where does your research come from?</div>
+            <div class="critical-card-body">The most accessible sources on any global issue tend to be published in English, by Western-based organisations. This shapes which stories get told, whose data gets cited, and which solutions get proposed. Actively seek out sources from affected regions — government statements, regional bodies, local civil society.</div>
+            <div class="critical-card-q">Question to ask: Am I reading about this issue, or am I reading what powerful actors say about this issue?</div>
+          </div>
+          <div class="critical-card">
+            <div class="critical-card-tag">Representation</div>
+            <div class="critical-card-title">Whose country policy is easier to find?</div>
+            <div class="critical-card-body">Research is much easier for well-resourced countries with strong diplomatic missions and established foreign policy infrastructure. For many Global South countries, finding official positions requires deeper digging — but doing so makes your paper substantially stronger and more honest.</div>
+            <div class="critical-card-q">Question to ask: If my country is harder to research, what does that tell me about global power structures?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ══ UNIT 3 ══ -->
+<section id="unit3" style="background:rgba(90,184,164,0.03)" aria-label="Unit 3: Simulated Committee">
+  <div class="container">
+    <div class="reveal">
+      <div class="unit-header" style="--ac:var(--u3);--acd:var(--u3d)">
+        <div class="unit-header-top">
+          <span class="unit-number">Unit 03 of 03</span>
+          <span class="unit-pace">17 lessons · 7 weeks</span>
+        </div>
+        <div class="unit-title" style="color:var(--u3)">Simulated Committee</div>
+        <div class="unit-eq">Essential question: <em>How effectively do UN committees solve global problems?</em></div>
+        <div class="unit-enduring">The structured procedures of UN committees are designed to ensure an orderly, inclusive, and equitable framework for global dialogue. While this system allows for global participation and the development of international norms, effectiveness is often a complex balance — the pursuit of consensus can be hampered by competing national interests, power dynamics, and procedural intricacies.</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="sec-label" style="color:var(--u3)">Lesson Map</div>
+      <h2 class="sec-title">What you'll learn</h2>
+      <p class="sec-intro">Seventeen lessons across the full simulation cycle — from opening speeches to final vote. Click any lesson to expand.</p>
+    </div>
+    <div class="lesson-map reveal" id="lm3" role="list" aria-label="Unit 3 lessons"></div>
+
+    <!-- Delegate Tips -->
+    <div class="reveal" style="margin-top:3rem">
+      <div class="sec-label" style="color:var(--u3)">Delegate skills</div>
+      <h2 class="sec-title">How to perform in committee</h2>
+      <p class="sec-intro">Procedure alone doesn't make a good delegate. These are the skills that separate competent delegates from effective ones.</p>
+    </div>
+    <div class="tips-grid reveal" id="tipsGrid"></div>
+
+    <!-- Critical lens: Unit 3 -->
+    <div class="reveal" style="margin-top:3.5rem">
+      <div class="critical-lens">
+        <div class="critical-lens-header">
+          <span class="critical-lens-icon" aria-hidden="true">⚖</span>
+          <div>
+            <div class="critical-lens-label">Critical lens · Simulation</div>
+            <div class="critical-lens-title">What does MUN not teach?</div>
+          </div>
+        </div>
+        <div class="critical-cards">
+          <div class="critical-card">
+            <div class="critical-card-tag">Simulation limits</div>
+            <div class="critical-card-title">The gap between simulation and reality</div>
+            <div class="critical-card-body">In MUN, delegations eventually reach consensus because the simulation requires it. In reality, the UN Security Council has been deadlocked for years on Syria, Ukraine, and climate finance. Consider: what does a simulation that always produces a resolution teach you about a system that often doesn't?</div>
+            <div class="critical-card-q">Reflection: Which elements of your simulation most accurately reflect real UN diplomacy — and which are smoothed over for pedagogical purposes?</div>
+          </div>
+          <div class="critical-card">
+            <div class="critical-card-tag">Who is in the room</div>
+            <div class="critical-card-title">Representation in practice</div>
+            <div class="critical-card-body">Real UN committees include hundreds of delegations, many speaking in their second or third language, with vastly different levels of resources. Western-educated delegates often dominate proceedings regardless of what the voting rules say. Your simulation simplifies this — but the question of who gets heard is always worth asking.</div>
+            <div class="critical-card-q">Reflection: Whose voices were heard most in your committee, and why?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ══ ASSESSMENT RUBRICS ══ -->
+<section id="rubrics" aria-label="Assessment rubrics">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Assessment</div>
+      <h2 class="sec-title">Rubrics &amp; success criteria</h2>
+      <p class="sec-intro">Four assessment types, each with explicit criteria. Know what excellence looks like before you submit — or before you speak.</p>
+    </div>
+    <div class="rubric-tabs reveal" role="tablist" aria-label="Select assessment type">
+      <button class="rubric-tab active" role="tab" aria-selected="true" aria-controls="rubric-paper" onclick="switchRubric('paper',this)">Position Paper</button>
+      <button class="rubric-tab" role="tab" aria-selected="false" aria-controls="rubric-speech" onclick="switchRubric('speech',this)">Opening Speech</button>
+      <button class="rubric-tab" role="tab" aria-selected="false" aria-controls="rubric-resolution" onclick="switchRubric('resolution',this)">Resolution</button>
+      <button class="rubric-tab" role="tab" aria-selected="false" aria-controls="rubric-participation" onclick="switchRubric('participation',this)">Participation</button>
+    </div>
+    <div id="rubricPanels" class="reveal"></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ══ GLOSSARY ══ -->
+<section id="glossary" aria-label="Glossary of terms">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Glossary</div>
+      <h2 class="sec-title">All terms, all units</h2>
+      <p class="sec-intro">Every vocabulary term from the curriculum. Browse, search, test yourself with flashcards, or take a quick quiz.</p>
+    </div>
+    <div class="glossary-mode-tabs reveal" role="tablist" aria-label="Glossary mode">
+      <button class="gmode-tab active" role="tab" aria-selected="true" aria-controls="browseMode" onclick="switchGlossMode('browse',this)">Browse</button>
+      <button class="gmode-tab" role="tab" aria-selected="false" aria-controls="flashcardMode" onclick="switchGlossMode('flashcard',this)">Flashcards</button>
+      <button class="gmode-tab" role="tab" aria-selected="false" aria-controls="quizMode" onclick="switchGlossMode('quiz',this)">Quick Quiz</button>
+    </div>
+
+    <!-- Browse mode -->
+    <div id="browseMode">
+      <div class="glossary-controls reveal">
+        <input class="glossary-search" id="glossSearch" placeholder="Search terms…" oninput="filterGlossary()" aria-label="Search glossary terms">
+        <button class="gloss-filter active" data-unit="all" onclick="filterGlossary('all',this)" aria-pressed="true">All</button>
+        <button class="gloss-filter" data-unit="1" onclick="filterGlossary('1',this)" aria-pressed="false">Unit 1</button>
+        <button class="gloss-filter" data-unit="2" onclick="filterGlossary('2',this)" aria-pressed="false">Unit 2</button>
+        <button class="gloss-filter" data-unit="3" onclick="filterGlossary('3',this)" aria-pressed="false">Unit 3</button>
+      </div>
+      <div class="glossary-grid reveal" id="glossaryGrid" aria-live="polite"></div>
+    </div>
+
+    <!-- Flashcard mode -->
+    <div id="flashcardMode" aria-label="Flashcard study mode">
+      <div class="flashcard-arena">
+        <div class="fc-progress" aria-hidden="true"><div class="fc-progress-bar" id="fcProgressBar"></div></div>
+        <div class="flashcard-stats">
+          <span>Card <strong id="fcIndex">1</strong> of <strong id="fcTotal">0</strong></span>
+          <span>✓ <strong id="fcCorrect">0</strong> known</span>
+          <span>✗ <strong id="fcWrong">0</strong> studying</span>
+        </div>
+        <div class="flashcard" id="flashcard" onclick="flipCard()" role="button" aria-label="Flip flashcard" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')flipCard()">
+          <div class="flashcard-inner">
+            <div class="flashcard-front">
+              <div class="flashcard-front-hint">Click to reveal definition</div>
+              <div class="flashcard-term" id="fcTerm">—</div>
+            </div>
+            <div class="flashcard-back">
+              <div class="flashcard-def" id="fcDef">—</div>
+              <div class="flashcard-unit-tag" id="fcUnitTag"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flashcard-controls">
+          <button class="fc-btn" onclick="prevCard()" aria-label="Previous card">← Prev</button>
+          <button class="fc-btn incorrect" onclick="markCard(false)" aria-label="Mark as still studying">Still studying</button>
+          <button class="fc-btn correct" onclick="markCard(true)" aria-label="Mark as known">Know it ✓</button>
+          <button class="fc-btn" onclick="nextCard()" aria-label="Next card">Next →</button>
+          <button class="fc-btn" onclick="shuffleCards()" aria-label="Shuffle cards">Shuffle</button>
+          <button class="fc-btn" onclick="resetCards()" aria-label="Reset progress">Reset</button>
+        </div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;margin-top:0.5rem">
+          <button class="gloss-filter" data-unit="all" onclick="setFCUnit('all',this)" style="font-size:0.58rem" aria-pressed="true">All units</button>
+          <button class="gloss-filter" data-unit="1" onclick="setFCUnit('1',this)" style="font-size:0.58rem" aria-pressed="false">Unit 1</button>
+          <button class="gloss-filter" data-unit="2" onclick="setFCUnit('2',this)" style="font-size:0.58rem" aria-pressed="false">Unit 2</button>
+          <button class="gloss-filter" data-unit="3" onclick="setFCUnit('3',this)" style="font-size:0.58rem" aria-pressed="false">Unit 3</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz mode -->
+    <div id="quizMode" aria-label="Quick quiz mode">
+      <div class="quiz-arena">
+        <div class="fc-progress" aria-hidden="true" style="margin-bottom:1.5rem"><div class="fc-progress-bar" id="quizProgressBar"></div></div>
+        <div id="quizContent"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ══ PROCEDURE ══ -->
+<section id="procedure" style="background:rgba(90,184,164,0.03)" aria-label="Parliamentary procedure reference">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label" style="color:var(--u3)">Parliamentary Procedure</div>
+      <h2 class="sec-title">In-session quick reference</h2>
+      <p class="sec-intro">Use this during committee. Procedure moves fast — know your points, motions, and voting options before you need them.</p>
+    </div>
+    <div class="proc-tabs reveal" role="tablist" aria-label="Procedure categories">
+      <button class="proc-tab active" role="tab" aria-selected="true" aria-controls="procPanels" onclick="switchProc('points',this)">Points</button>
+      <button class="proc-tab" role="tab" aria-selected="false" aria-controls="procPanels" onclick="switchProc('motions',this)">Motions</button>
+      <button class="proc-tab" role="tab" aria-selected="false" aria-controls="procPanels" onclick="switchProc('voting',this)">Voting</button>
+      <button class="proc-tab" role="tab" aria-selected="false" aria-controls="procPanels" onclick="switchProc('speeches',this)">Speeches</button>
+      <button class="proc-tab" role="tab" aria-selected="false" aria-controls="procPanels" onclick="switchProc('caucus',this)">Caucusing</button>
+    </div>
+    <div id="procPanels" class="reveal"></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ══ RESOLUTION BUILDER ══ -->
+<section id="resbuilder" aria-label="Resolution clause builder">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label" style="color:var(--u3)">Resolution Builder</div>
+      <h2 class="sec-title">Construct your clause</h2>
+      <p class="sec-intro">Select a verb to build a correctly formatted preambulatory or operative clause. Every verb carries a specific diplomatic weight — choose deliberately.</p>
+    </div>
+    <div class="res-builder reveal" id="resBuilder">
+      <div class="res-panel">
+        <div class="res-panel-label pream">Preambulatory clauses</div>
+        <div class="clause-type-tabs" id="preamTabs" role="tablist" aria-label="Preamble verb categories"></div>
+        <div class="verb-grid" id="preamVerbs" role="list" aria-label="Preamble verbs"></div>
+      </div>
+      <div class="res-panel">
+        <div class="res-panel-label oper">Operative clauses</div>
+        <div class="clause-type-tabs" id="operTabs" role="tablist" aria-label="Operative verb categories"></div>
+        <div class="verb-grid" id="operVerbs" role="list" aria-label="Operative verbs"></div>
+      </div>
+      <div class="res-output">
+        <div class="res-result">
+          <div class="res-result-label">Clause preview</div>
+          <div class="res-clause-display" id="resClauseDisplay" aria-live="polite">Select a verb above to preview a clause.</div>
+          <div class="res-format-note" id="resFormatNote" aria-live="polite"></div>
+          <button class="res-copy-btn" onclick="copyClause()">Copy clause →</button>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:3rem">
+      <div class="sec-label" style="color:var(--u3)">Resolution format</div>
+      <h2 class="sec-title">How a resolution is structured</h2>
+      <p class="sec-intro">Every resolution follows the same format. Knowing the format means you can focus on the content.</p>
+    </div>
+    <div class="organs-grid reveal" id="resFormatGrid"></div>
+  </div>
+</section>
+
+<!-- ══ COUNTRY PROFILE GENERATOR ══ -->
+<section id="countryProfile" aria-label="Country profile generator">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label" style="color:var(--u1)">AI Tool</div>
+      <h2 class="sec-title">Country Profile Generator</h2>
+      <p class="sec-intro">Enter your assigned country and committee topic to get an AI-generated research brief — key facts, likely policy positions, bloc alignments, and research starting points. Use this as a launching pad, not a substitute for your own research.</p>
+    </div>
+    <div class="cp-form reveal">
+      <div class="cp-field">
+        <label class="cp-label" for="cpCountry">Assigned country</label>
+        <input class="cp-input" id="cpCountry" type="text" placeholder="e.g. Brazil, Germany, India…" autocomplete="off">
+      </div>
+      <div class="cp-field">
+        <label class="cp-label" for="cpTopic">Committee topic</label>
+        <input class="cp-input" id="cpTopic" type="text" placeholder="e.g. Climate finance, Nuclear disarmament…" autocomplete="off">
+      </div>
+      <button class="cp-generate-btn" id="cpBtn" onclick="generateCountryProfile()">Generate profile →</button>
+    </div>
+    <div class="cp-output reveal" id="cpOutput"></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ══ DOWNLOADS ══ -->
+<section id="downloads" aria-label="Downloadable resources">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label" style="color:var(--u2)">Resources</div>
+      <h2 class="sec-title">Downloadable PDFs</h2>
+      <p class="sec-intro">Three print-ready PDFs — one for each major deliverable. Use them offline, annotate them, or print them for committee day.</p>
+    </div>
+    <div class="pdf-grid reveal">
+      <a class="pdf-card" href="pdfs/position-paper-template.pdf" download style="--pdf-accent:var(--u2)">
+        <div class="pdf-card-tag">Unit 2 · Research to Policy</div>
+        <div class="pdf-card-title">Position Paper Template</div>
+        <div class="pdf-card-desc">All four sections with guidance prompts, example openings, self-check lists, and common mistake warnings. Print and annotate as you draft.</div>
+        <div class="pdf-card-dl">Download PDF</div>
+      </a>
+      <a class="pdf-card" href="pdfs/procedure-guide.pdf" download style="--pdf-accent:var(--u3)">
+        <div class="pdf-card-tag">Unit 3 · Simulated Committee</div>
+        <div class="pdf-card-title">Parliamentary Procedure Guide</div>
+        <div class="pdf-card-desc">All points, motions, voting options, speech types, and caucus rules in one quick-reference document. Bring it to committee.</div>
+        <div class="pdf-card-dl">Download PDF</div>
+      </a>
+      <a class="pdf-card" href="pdfs/assessment-rubrics.pdf" download style="--pdf-accent:var(--u1)">
+        <div class="pdf-card-tag">All Units · Assessment</div>
+        <div class="pdf-card-title">Assessment Rubrics</div>
+        <div class="pdf-card-desc">All four rubrics — position paper, opening speech, resolution drafting, and participation — with explicit level descriptors. Know what excellence looks like before you submit.</div>
+        <div class="pdf-card-dl">Download PDF</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ RESET CONFIRM MODAL ══ -->
+<div class="modal-overlay" id="resetModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <div class="modal-title" id="modalTitle">Reset all progress?</div>
+    <div class="modal-body">This will clear all your paper checklist completions and flashcard results. Your data will be permanently deleted from this browser. This cannot be undone.</div>
+    <div class="modal-actions">
+      <button class="modal-btn" onclick="closeResetModal()">Cancel</button>
+      <button class="modal-btn confirm-danger" onclick="confirmReset()">Yes, reset everything</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-logos" style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1rem;">
+      <img src="dsp-logo.png" alt="DSP" style="height:18px;width:auto;filter:brightness(0) invert(1);opacity:0.3;">
+      <img src="un-logo.png" alt="UN emblem" style="height:18px;width:auto;filter:brightness(0) invert(1);opacity:0.3;">
+    </div>
+    <div class="footer-brand">Model United Nations · DSP</div>
+    <p>Student guide · All three units · Grades 10–12 · <a href="#" aria-label="DSP English Hub">DSP English Hub</a></p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="save-banner" id="saveBanner" aria-live="polite">
+  <span class="save-dot"></span><span>Progress saved</span>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
