@@ -882,7 +882,7 @@ Respond ONLY with a valid JSON object (no markdown, no extra text) with this exa
   try {
     const resp = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {   'Content-Type': 'application/json',   'x-api-key': 'YOUR_API_KEY_HERE',   'anthropic-version': '2023-06-01',   'anthropic-dangerous-direct-browser-ipc': 'true' },
       body: JSON.stringify({
         model: 'claude-sonnet-4-20250514',
         max_tokens: 1000,
